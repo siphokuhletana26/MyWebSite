@@ -19,7 +19,11 @@ namespace MyWebSite.Controllers
             return View();
         }
         [HttpPost]
+<<<<<<< HEAD
         public IActionResult Register(string username, string password, string confirmPassword, string emailAddress, string contactNumber, char userType = 'A')
+=======
+        public IActionResult Register(string username, string password, string confirmPassword, string emailAddress, string contactNumber)
+>>>>>>> 3d40bff7e6b77451ae820f86dd87ff3ad1f15bcd
         {
             if (password != confirmPassword)
             {
@@ -34,16 +38,25 @@ namespace MyWebSite.Controllers
                 var parameters = new DynamicParameters();
                 parameters.Add("@Username", username);
                 parameters.Add("@Password", password);
+<<<<<<< HEAD
                 parameters.Add("@ConfirmPassword", confirmPassword);
                 parameters.Add("@EmailAddress", emailAddress);
                 parameters.Add("@ContactNo", contactNumber);
                 parameters.Add("@UserType", userType);
+=======
+                parameters.Add("@EmailAddress", emailAddress);
+                parameters.Add("@ContactNo", contactNumber);
+>>>>>>> 3d40bff7e6b77451ae820f86dd87ff3ad1f15bcd
 
                 var result = connection.QueryFirstOrDefault<string>("RegisterUser", parameters, commandType: CommandType.StoredProcedure);
 
                 if (result == "Registration successful")
                 {
+<<<<<<< HEAD
                     return RedirectToAction("Login");
+=======
+                    return RedirectToAction("Login", "User ");
+>>>>>>> 3d40bff7e6b77451ae820f86dd87ff3ad1f15bcd
                 }
                 else if (result == "Username already exists")
                 {

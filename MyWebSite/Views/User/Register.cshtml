@@ -123,8 +123,12 @@
             </div>
             <div class="form-group">
                 <label for="confirmPassword">Confirm Password: <span class="required">*</span></label>
+<<<<<<< HEAD
                 <input type="password" id="confirmPassword" name="confirmPassword" required oninput="checkPasswordMatch()">
                 <div id="passwordError" class="text-danger" style="display: none;">Passwords do not match</div>
+=======
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+>>>>>>> 3d40bff7e6b77451ae820f86dd87ff3ad1f15bcd
             </div>
             <div class="form-group">
                 <label for="emailAddress">Email Address: <span class="required">*</span></label>
@@ -134,12 +138,17 @@
             <div class="form-group">
                 <label for="contactNumber">Contact Number: <span class="required">*</span></label>
                 <input type="tel" id="contactNumber" name="contactNumber" required>
+<<<<<<< HEAD
                 <small class="text-muted">Please enter a 10-digit contact number (numeric characters only).</small>
+=======
+                 <small class="text-muted">Please enter a 10-digit contact number (numeric characters only).</small>
+>>>>>>> 3d40bff7e6b77451ae820f86dd87ff3ad1f15bcd
             </div> 
             <div class="form-group">
                 <button type="submit">Register</button>
             </div>
              <div class="form-group">
+<<<<<<< HEAD
                 <a href="#">Forgot Password?</a>
             </div>
         </form>
@@ -165,6 +174,26 @@
         }
     });
 </script>
+=======
+              <a href="#">Forgot Password?</a>
+           </div>
+        </form>
+
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="validation-summary-errors">
+                <p>Please correct the following errors:</p>
+                <ul>
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+</div>
+>>>>>>> 3d40bff7e6b77451ae820f86dd87ff3ad1f15bcd
 <script>
     document.getElementById('contactNumber').addEventListener('input', function () {
         var value = this.value.replace(/\D/g, '');
